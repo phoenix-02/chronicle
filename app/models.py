@@ -4,7 +4,7 @@ from app import db
 
 class Chronicle(db.Model):
     min_timestamp = db.Column(db.DateTime(64), nullable=True, default=datetime.datetime.now())
-    max_timestamp = db.Column(db.DateTime(64), nullable=True, default=min_timestamp + datetime.timedelta(days=20))
+    max_timestamp = db.Column(db.DateTime(64), nullable=True, default=datetime.datetime.now())
     source = db.Column(db.String(64), index=True)
     status = db.Column(db.String(5), default="Open")
     unique_id = db.Column(db.Integer, primary_key=True)
